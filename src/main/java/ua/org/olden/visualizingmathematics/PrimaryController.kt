@@ -15,25 +15,24 @@ import ua.org.olden.stringnumeric.StringNumericRecord
 class PrimaryController {
 
     @FXML private lateinit var mainWindows: VBox
-    @FXML private lateinit var value_a: TextField
-    @FXML private lateinit var value_b: TextField
+    @FXML private lateinit var valueA: TextField
+    @FXML private lateinit var valueB: TextField
     @FXML private lateinit var operationResult: TextArea
-    @FXML private lateinit var btn_addAB: Button
-    @FXML private lateinit var btn_subAB: Button
-    @FXML private lateinit var btn_mulAB: Button
-    @FXML private lateinit var btn_divAB: Button
-    @FXML private lateinit var btn_sqrtA: Button
-    @FXML private lateinit var btn_sqrtB: Button
-    @FXML private lateinit var mitem_addAB: MenuItem
-    @FXML private lateinit var mitem_subAB: MenuItem
-    @FXML private lateinit var mitem_mulAB: MenuItem
-    @FXML private lateinit var mitem_divAB: MenuItem
-    @FXML private lateinit var mitem_sqrtA: MenuItem
-    @FXML private lateinit var mitem_sqrtB: MenuItem
+    @FXML private lateinit var btnAddAB: Button
+    @FXML private lateinit var btnSubAB: Button
+    @FXML private lateinit var btnMulAB: Button
+    @FXML private lateinit var btnDivAB: Button
+    @FXML private lateinit var btnSqrtA: Button
+    @FXML private lateinit var btnSqrtB: Button
+    @FXML private lateinit var mitemAddAB: MenuItem
+    @FXML private lateinit var mitemSubAB: MenuItem
+    @FXML private lateinit var mitemMulAB: MenuItem
+    @FXML private lateinit var mitemDivAB: MenuItem
+    @FXML private lateinit var mitemSqrtA: MenuItem
+    @FXML private lateinit var mitemSqrtB: MenuItem
 
     private var isValidA = false
     private var isValidB = false
-    private val IS_NUMBER = Regex("^-?\\d+(\\.\\d+)?$")
 
     @FXML private fun quit() = App.quit()
 
@@ -48,46 +47,53 @@ class PrimaryController {
     }
 
     @FXML private fun addAB() = result(
-        StringNumeric(value_a.text.trim()).add(StringNumeric(value_b.text.trim()), true)
+        StringNumeric(valueA.text.trim()).add(StringNumeric(valueB.text.trim()), true)
     )
 
     @FXML private fun subAB() = result(
-        StringNumeric(value_a.text.trim()).sub(StringNumeric(value_b.text.trim()), true)
+        StringNumeric(valueA.text.trim()).sub(StringNumeric(valueB.text.trim()), true)
     )
 
     @FXML private fun mulAB() = result(
-        StringNumeric(value_a.text.trim()).mul(StringNumeric(value_b.text.trim()), true)
+        StringNumeric(valueA.text.trim()).mul(StringNumeric(valueB.text.trim()), true)
     )
 
     @FXML private fun divAB() = result(
-        StringNumeric(value_a.text.trim()).div(StringNumeric(value_b.text.trim()), 10, true)
+        StringNumeric(valueA.text.trim()).div(StringNumeric(valueB.text.trim()), 10, true)
     )
 
-    @FXML private fun sqrtA() = result(StringNumeric(value_a.text.trim()).sqrtLongDivision(10, true))
-    @FXML private fun sqrtB() = result(StringNumeric(value_b.text.trim()).sqrtLongDivision(10, true))
+    @FXML private fun sqrtA() = result(StringNumeric(valueA.text.trim()).sqrtLongDivision(10, true))
+    @FXML private fun sqrtB() = result(StringNumeric(valueB.text.trim()).sqrtLongDivision(10, true))
 
-    @FXML private fun validateA() { isValidA = isValidNumber(value_a.text.trim()); setButtonState() }
-    @FXML private fun validateB() { isValidB = isValidNumber(value_b.text.trim()); setButtonState() }
+    @FXML
+    private fun validateA() {
+        isValidA = isValidNumber(valueA.text.trim())
+        setButtonState()
+    }
+
+    @FXML
+    private fun validateB() {
+        isValidB = isValidNumber(valueB.text.trim())
+        setButtonState()
+    }
 
     private fun result(snr: StringNumericRecord) {
         operationResult.text = "Результат обчислення: ${snr.value()}\n\n${snr.visualize()}"
     }
 
-    private fun isValidNumber(v: String) = v.isNotEmpty() && IS_NUMBER.matches(v)
+    private fun isValidNumber(v: String) = v.isNotEmpty() && numberRegex.matches(v)
 
     private fun setButtonState() {
         val bothValid = isValidA && isValidB
-        btn_addAB.isDisable = !bothValid
-        btn_subAB.isDisable = !bothValid
-        btn_mulAB.isDisable = !bothValid
-        btn_divAB.isDisable = !bothValid
-        btn_sqrtA.isDisable = !isValidA
-        btn_sqrtB.isDisable = !isValidB
-        mitem_addAB.isDisable = !bothValid
-        mitem_subAB.isDisable = !bothValid
-        mitem_mulAB.isDisable = !bothValid
-        mitem_divAB.isDisable = !bothValid
-        mitem_sqrtA.isDisable = !isValidA
-        mitem_sqrtB.isDisable = !isValidB
+        listOf(btnAddAB, btnSubAB, btnMulAB, btnDivAB).forEach { it.isDisable = !bothValid }
+        listOf(mitemAddAB, mitemSubAB, mitemMulAB, mitemDivAB).forEach { it.isDisable = !bothValid }
+        btnSqrtA.isDisable = !isValidA
+        btnSqrtB.isDisable = !isValidB
+        mitemSqrtA.isDisable = !isValidA
+        mitemSqrtB.isDisable = !isValidB
+    }
+
+    companion object {
+        private val numberRegex = Regex("^-?\\d+(\\.\\d+)?$")
     }
 }

@@ -23,12 +23,12 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Метод">
                     <items>
-                        <MenuItem fx:id="mitem_addAB" disable="true" mnemonicParsing="false" onAction="#addAB" text="A + B" />
-                        <MenuItem fx:id="mitem_subAB" disable="true" mnemonicParsing="false" onAction="#subAB" text="A - B" />
-                        <MenuItem fx:id="mitem_mulAB" disable="true" mnemonicParsing="false" onAction="#mulAB" text="A × B" />
-                        <MenuItem fx:id="mitem_divAB" disable="true" mnemonicParsing="false" onAction="#divAB" text="A ÷ B" />
-                        <MenuItem fx:id="mitem_sqrtA" disable="true" mnemonicParsing="false" onAction="#sqrtA" text="√ A" />
-                        <MenuItem fx:id="mitem_sqrtB" disable="true" mnemonicParsing="false" onAction="#sqrtB" text="√ B" />
+                        <MenuItem fx:id="mitemAddAB" disable="true" mnemonicParsing="false" onAction="#addAB" text="A + B" />
+                        <MenuItem fx:id="mitemSubAB" disable="true" mnemonicParsing="false" onAction="#subAB" text="A - B" />
+                        <MenuItem fx:id="mitemMulAB" disable="true" mnemonicParsing="false" onAction="#mulAB" text="A × B" />
+                        <MenuItem fx:id="mitemDivAB" disable="true" mnemonicParsing="false" onAction="#divAB" text="A ÷ B" />
+                        <MenuItem fx:id="mitemSqrtA" disable="true" mnemonicParsing="false" onAction="#sqrtA" text="√ A" />
+                        <MenuItem fx:id="mitemSqrtB" disable="true" mnemonicParsing="false" onAction="#sqrtB" text="√ B" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Допомога">
@@ -43,7 +43,7 @@
                 <FlowPane alignment="CENTER" hgap="10.0">
                     <children>
                         <Label text="Число A" />
-                        <TextField id="value_a_id" fx:id="value_a" onKeyReleased="#validateA" promptText="Число A" />
+                        <TextField fx:id="valueA" onKeyReleased="#validateA" promptText="Число A" />
                     </children>
                     <padding>
                         <Insets left="10.0" right="10.0" top="10.0" />
@@ -52,7 +52,7 @@
                 <FlowPane alignment="CENTER" hgap="10.0">
                     <children>
                         <Label text="Число B" />
-                        <TextField id="value_b_id" fx:id="value_b" onKeyReleased="#validateB" promptText="Число B" />
+                        <TextField fx:id="valueB" onKeyReleased="#validateB" promptText="Число B" />
                     </children>
                     <padding>
                         <Insets left="10.0" right="10.0" top="10.0" />
@@ -60,12 +60,12 @@
                 </FlowPane>
                 <FlowPane alignment="CENTER" hgap="10.0">
                     <children>
-                        <Button fx:id="btn_addAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addAB" prefWidth="100.0" text="A + B" textAlignment="CENTER" />
-                        <Button fx:id="btn_subAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#subAB" prefWidth="100.0" text="A - B" textAlignment="CENTER" />
-                        <Button fx:id="btn_mulAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mulAB" prefWidth="100.0" text="A × B" textAlignment="CENTER" />
-                        <Button fx:id="btn_divAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#divAB" prefWidth="100.0" text="A ÷ B" textAlignment="CENTER" />
-                        <Button fx:id="btn_sqrtA" disable="true" mnemonicParsing="false" onAction="#sqrtA" prefWidth="100.0" text="√ A" />
-                        <Button fx:id="btn_sqrtB" disable="true" mnemonicParsing="false" onAction="#sqrtB" prefWidth="100.0" text="√ B" />
+                        <Button fx:id="btnAddAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addAB" prefWidth="100.0" text="A + B" textAlignment="CENTER" />
+                        <Button fx:id="btnSubAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#subAB" prefWidth="100.0" text="A - B" textAlignment="CENTER" />
+                        <Button fx:id="btnMulAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mulAB" prefWidth="100.0" text="A × B" textAlignment="CENTER" />
+                        <Button fx:id="btnDivAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#divAB" prefWidth="100.0" text="A ÷ B" textAlignment="CENTER" />
+                        <Button fx:id="btnSqrtA" disable="true" mnemonicParsing="false" onAction="#sqrtA" prefWidth="100.0" text="√ A" />
+                        <Button fx:id="btnSqrtB" disable="true" mnemonicParsing="false" onAction="#sqrtB" prefWidth="100.0" text="√ B" />
                     </children>
                     <padding>
                         <Insets left="10.0" right="10.0" top="10.0" />

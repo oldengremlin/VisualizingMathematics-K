@@ -10,7 +10,8 @@ import javafx.stage.Stage
 class App : Application() {
 
     override fun start(stage: Stage) {
-        Font.loadFont(App::class.java.getResourceAsStream("fonts/DejaVu Sans Mono.ttf"), 13.0)
+        App::class.java.getResourceAsStream("fonts/DejaVu Sans Mono.ttf")
+            ?.let { Font.loadFont(it, 13.0) }
 
         scene = Scene(loadFXML("primary"))
 
@@ -25,7 +26,7 @@ class App : Application() {
     }
 
     companion object {
-        lateinit var scene: Scene
+        private lateinit var scene: Scene
 
         internal fun setRoot(fxml: String) {
             scene.root = loadFXML(fxml)
@@ -36,7 +37,6 @@ class App : Application() {
 
         fun quit() {
             Platform.exit()
-            System.exit(0)
         }
 
         @JvmStatic
