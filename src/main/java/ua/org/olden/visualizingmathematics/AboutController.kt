@@ -10,6 +10,6 @@ class AboutController {
 
     @FXML
     private fun close() {
-        (dialog.scene.window as Stage).close()
+        (dialog.scene.window as? Stage)?.close()
     }
 }
