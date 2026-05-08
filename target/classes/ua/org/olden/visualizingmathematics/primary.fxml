@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="mainWindows" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" rotate="-0.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.org.olden.visualizingmathematics.PrimaryController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Файл">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#quit" text="Закрити" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Метод">
+                    <items>
+                        <MenuItem fx:id="mitemAddAB" disable="true" mnemonicParsing="false" onAction="#addAB" text="A + B" />
+                        <MenuItem fx:id="mitemSubAB" disable="true" mnemonicParsing="false" onAction="#subAB" text="A - B" />
+                        <MenuItem fx:id="mitemMulAB" disable="true" mnemonicParsing="false" onAction="#mulAB" text="A × B" />
+                        <MenuItem fx:id="mitemDivAB" disable="true" mnemonicParsing="false" onAction="#divAB" text="A ÷ B" />
+                        <MenuItem fx:id="mitemSqrtA" disable="true" mnemonicParsing="false" onAction="#sqrtA" text="√ A" />
+                        <MenuItem fx:id="mitemSqrtB" disable="true" mnemonicParsing="false" onAction="#sqrtB" text="√ B" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Допомога">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="Про…" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <VBox alignment="CENTER">
+            <children>
+                <FlowPane alignment="CENTER" hgap="10.0">
+                    <children>
+                        <Label text="Число A" />
+                        <TextField fx:id="valueA" onKeyReleased="#validateA" promptText="Число A" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </FlowPane>
+                <FlowPane alignment="CENTER" hgap="10.0">
+                    <children>
+                        <Label text="Число B" />
+                        <TextField fx:id="valueB" onKeyReleased="#validateB" promptText="Число B" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </FlowPane>
+                <FlowPane alignment="CENTER" hgap="10.0">
+                    <children>
+                        <Button fx:id="btnAddAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addAB" prefWidth="100.0" text="A + B" textAlignment="CENTER" />
+                        <Button fx:id="btnSubAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#subAB" prefWidth="100.0" text="A - B" textAlignment="CENTER" />
+                        <Button fx:id="btnMulAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mulAB" prefWidth="100.0" text="A × B" textAlignment="CENTER" />
+                        <Button fx:id="btnDivAB" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#divAB" prefWidth="100.0" text="A ÷ B" textAlignment="CENTER" />
+                        <Button fx:id="btnSqrtA" disable="true" mnemonicParsing="false" onAction="#sqrtA" prefWidth="100.0" text="√ A" />
+                        <Button fx:id="btnSqrtB" disable="true" mnemonicParsing="false" onAction="#sqrtB" prefWidth="100.0" text="√ B" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </FlowPane>
+                <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <TextArea fx:id="operationResult" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0">
+                            <font>
+                                <Font name="DejaVu Sans Mono" size="13.0" />
+                            </font>
+                        </TextArea>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                    </padding>
+                </FlowPane>
+            </children>
+        </VBox>
+    </children>
+</VBox>
