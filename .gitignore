@@ -25,3 +25,5 @@ replay_pid*
 
 # Local build counter (incremented each mvn package)
 buildNumber.properties
+
+target/
