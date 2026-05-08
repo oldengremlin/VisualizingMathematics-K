@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="mainWindows" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" rotate="-0.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.org.olden.visualizingmathematics.PrimaryController">
+<VBox fx:id="mainWindows" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.org.olden.visualizingmathematics.PrimaryController">
     <children>
         <MenuBar>
             <menus>
@@ -73,7 +74,7 @@
                 </FlowPane>
                 <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                     <children>
-                        <TextArea fx:id="operationResult" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0">
+                        <TextArea fx:id="operationResult" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" rotate="-1.0" styleClass="chalkboard">
                             <font>
                                 <Font name="DejaVu Sans Mono" size="13.0" />
                             </font>
@@ -86,4 +87,7 @@
             </children>
         </VBox>
     </children>
+    <stylesheets>
+        <URL value="@chalkboard.css" />
+    </stylesheets>
 </VBox>

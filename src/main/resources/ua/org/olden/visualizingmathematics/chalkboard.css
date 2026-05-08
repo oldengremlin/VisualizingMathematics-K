@@ -1,0 +1,58 @@
+.chalkboard {
+    -fx-control-inner-background: #2b1810;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 18, 0.15, 0, 8);
+}
+
+.chalkboard .content {
+    -fx-background-color: #2b1810;
+}
+
+.chalkboard .text {
+    -fx-fill: #f0eadd;
+}
+
+.chalkboard:focused {
+    -fx-highlight-fill: #f0eadd;
+    -fx-highlight-text-fill: #2b1810;
+}
+
+.chalkboard .scroll-bar:horizontal,
+.chalkboard .scroll-bar:vertical {
+    -fx-background-color: #2b1810;
+}
+
+.chalkboard .scroll-bar .track {
+    -fx-background-color: #2b1810;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0;
+}
+
+.chalkboard .scroll-bar .track-background {
+    -fx-background-color: #2b1810;
+}
+
+.chalkboard .scroll-bar .thumb {
+    -fx-background-color: #f0eadd;
+    -fx-background-insets: 2;
+    -fx-background-radius: 4;
+}
+
+.chalkboard .scroll-bar .thumb:hover,
+.chalkboard .scroll-bar .thumb:pressed {
+    -fx-background-color: #ffffff;
+}
+
+.chalkboard .scroll-bar .increment-button,
+.chalkboard .scroll-bar .decrement-button {
+    -fx-background-color: #2b1810;
+    -fx-background-radius: 0;
+}
+
+.chalkboard .scroll-bar .increment-arrow,
+.chalkboard .scroll-bar .decrement-arrow {
+    -fx-background-color: #f0eadd;
+}
+
+.chalkboard .corner {
+    -fx-background-color: #2b1810;
+}
